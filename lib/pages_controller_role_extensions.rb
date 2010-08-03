@@ -1,7 +1,7 @@
 module PagesControllerRoleExtensions
   def self.included(base)
     base.class_eval {
-      only_allow_access_to :new, :edit,
+      only_allow_access_to :new, :edit, :update, :create, :destroy, :remove,
         :if => :user_is_in_page_role,
         :denied_url => :back,
         :denied_message => "You aren't in an appropriate role for editing or adding children to that page."
